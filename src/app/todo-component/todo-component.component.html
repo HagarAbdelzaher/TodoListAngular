@@ -1,0 +1,79 @@
+<!-- <div *ngIf="currentUrl === 'home'"> -->
+<div class="container">
+   
+        <h1 id="what"> So what we gonna do?</h1>
+        <form class="todo-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="input-field "></div>
+                <input type="text" name="title" id="title" ngModel>
+                <label for="title"> Enter Task</label>
+            </div>
+        </form>
+
+        <!-- undone tasks -->
+        <ul class="todo-list" *ngFor="let todo of todos">
+            <app-app-todo [todo]="todo"></app-app-todo>
+        </ul>
+
+    <div *ngIf="!todos?.length" class="msg">
+        Your Todo List is Empty!
+    </div>
+    <!-- </div> -->
+
+</div>
+<!-- Done tasks -->
+<!-- <div *ngIf="currentUrl === 'done'"> -->
+<div class="container">
+    <hr>
+    <h3 id="completed-tasks">Completed Tasks </h3>
+    <hr>
+    <ul class="todo-list" *ngFor="let todo of done">
+        <li id="finishedItems" *ngIf="!this.todo.isDeleted">
+            <app-app-done [todo]="todo"></app-app-done>
+        </li>
+    </ul>
+
+    <div *ngIf="!done?.length" class="msg">
+        Your Done List is Empty!
+    </div>
+
+</div>
+<!-- </div> -->
+
+<!-- Favorite tasks -->
+<!-- <div *ngIf="currentUrl === 'favorite'"> -->
+    <div class="container">
+        <hr>
+        <h3 id="completed-tasks">Favorite Tasks </h3>
+        <hr>
+        <ul class="todo-list" *ngFor="let todo of favorite">
+            <li id="unfinishedItems" *ngIf="!this.todo.isDeleted">
+                <app-app-favorite [todo]="todo"></app-app-favorite>
+            </li>
+        </ul>
+    
+        <div *ngIf="!favorite?.length" class="msg">
+            Your favorite List is Empty!
+        </div>
+    
+    </div>
+    <!-- </div> -->
+
+    <!-- Deleted tasks -->
+<!-- <div *ngIf="currentUrl === 'deleted'"> -->
+    <div class="container">
+        <hr>
+        <h3 id="completed-tasks">Deleted Tasks </h3>
+        <hr>
+        <ul class="todo-list" *ngFor="let todo of deleted">
+            <li id="unfinishedItems" >
+                <app-app-deleted [todo]="todo"></app-app-deleted>
+            </li>
+        </ul>
+    
+        <div *ngIf="!deleted?.length" class="msg">
+            Your deleted List is Empty!
+        </div>
+    
+    </div>
+    <!-- </div> -->

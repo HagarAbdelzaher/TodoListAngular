@@ -1,0 +1,72 @@
+
+
+.container
+{
+    width: 600px;
+    margin: 0 auto;
+    background-color: #D8D8D8;
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 5px;
+}
+.container h1
+{
+font-size: 40px;
+margin: 0;
+}
+
+
+.inline-icon
+{
+vertical-align: bottom;
+font-size: 18px !important;
+}
+
+
+.todo-list li
+{
+margin-top: 5px;
+border: 1px solid #bbb;
+padding: 5px 10px;
+}
+
+
+.todo-list li div
+{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+
+
+.todo-list button
+{
+margin-left: 5px;
+}
+
+
+.msg
+{
+color: #bbb;
+margin-bottom: 20px;
+}
+
+
+#completed-tasks
+{
+color: #408E91;
+font-size: 40px;
+}
+#what{
+    color:#E49393;
+}
+#finishedItems{
+    background-color:#408e9149;
+    font-size:17px;
+    text-decoration: line-through   ;
+}
+#unfinishedItems{
+    background-color:#408e9149;
+    font-size:17px;
+
+}
