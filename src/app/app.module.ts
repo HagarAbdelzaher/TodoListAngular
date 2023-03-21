@@ -12,6 +12,10 @@ import { FooterComponent } from './footer/footer.component';
 import { AppDoneComponent } from './app-done/app-done.component';
 import { AppFavoriteComponent } from './app-favorite/app-favorite.component';
 import { AppDeletedComponent } from './app-deleted/app-deleted.component';
+import { SignUpComponent } from './sign-up/sign-up.component'
+import { LoginComponent } from './login/login.component';
+
+
 
 
 @NgModule({
@@ -25,13 +29,16 @@ import { AppDeletedComponent } from './app-deleted/app-deleted.component';
     AppDoneComponent,
     AppFavoriteComponent,
     AppDeletedComponent,
+    SignUpComponent,
+    LoginComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

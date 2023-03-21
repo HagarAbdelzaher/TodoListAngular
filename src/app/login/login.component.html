@@ -1,1 +1,24 @@
-<p>login works!</p>
+
+<div class="form">
+    <h2>Log in</h2>
+    <form class="w-50 m-auto my-5" #form="ngForm" (ngSubmit)=" submitMyForm(form)">
+
+      <input [ngClass]="email.touched ? email.errors ? 'not-valid':'valid' :''" class="form-control" name="email" #email="ngModel" ngModel type="email" id="email" required email placeholder="email">
+       
+      <p *ngIf="email.touched && email.errors?.['required']" class="text-danger text-uppercase">Email is required</p>
+
+      <p *ngIf="email.touched && email.errors?.['email']" class="text-danger text-uppercase">Please enter a valid email</p>
+      <input class="form-control" name="password" ngModel type="password" id="password" required placeholder="password">
+ 
+
+      
+        <input class="form-control" name="quote" ngModel type="text" id="quote"placeholder="quote">
+        <input type="submit" [disabled]="!form.valid">
+    </form>
+    <p class="message">Don't have an account? <a href="#">Create an account</a></p>
+</div>
+
+  
+ 
+
+
