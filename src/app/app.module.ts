@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppDoneComponent } from './app-done/app-done.component';
 import { AppFavoriteComponent } from './app-favorite/app-favorite.component';
 import { AppDeletedComponent } from './app-deleted/app-deleted.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -25,11 +26,13 @@ import { AppDeletedComponent } from './app-deleted/app-deleted.component';
     AppDoneComponent,
     AppFavoriteComponent,
     AppDeletedComponent,
+    SignUpComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

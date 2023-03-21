@@ -1,0 +1,18 @@
+
+<div class="form">
+    <h2>Sign up</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+        <input formControlName="username" name="username" type="text" id="username" placeholder="username">
+        <p *ngIf="signUpForm.get('username')?.touched &&signUpForm.get('username')?.errors?.['required']">username is required</p>
+        <input formControlName="email" name="email" type="email" id="email"placeholder="email" >
+        <p *ngIf="signUpForm.get('email')?.touched &&signUpForm.get('email')?.errors?.['required']">Email is required</p>
+        <p *ngIf="signUpForm.get('email')?.touched &&signUpForm.get('email')?.errors?.['email']">Please enter a valid email</p>
+        <input formControlName="password" name="password" type="password" id="password"placeholder="password">
+        <p *ngIf="signUpForm.get('password')?.touched &&signUpForm.get('password')?.errors?.['minlength']">Password is minimum 6 characters</p>
+        <p *ngIf="signUpForm.get('password')?.touched &&signUpForm.get('password')?.errors?.['required']">Password is required</p>
+        <input formControlName="quote" name="quote" type="text" id="quote"placeholder="quote">
+        <input type="submit" [disabled]="!signUpForm.valid">
+    </form>
+    <p class="message">Already registered? <a href="#">Login instead</a></p>
+</div>
+
