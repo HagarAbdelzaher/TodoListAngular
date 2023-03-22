@@ -18,6 +18,7 @@ export class AppTodoComponent implements OnInit {
     title:"",
     userId:Guid.create() 
   };
+  displayStyle: string = "none";
   constructor(private _todos:TodosServiceService){
   }
   addTodo(form:NgForm){
@@ -35,7 +36,13 @@ export class AppTodoComponent implements OnInit {
     this._todos.onFavorite(this.todo.id);
   }
  
- 
+  openPopUp() {
+    this.displayStyle = "block";
+  }
+  closePopUp() {
+    this.displayStyle = "none";
+  }
+
  ngOnInit(): void {
  }
 

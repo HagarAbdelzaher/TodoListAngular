@@ -10,32 +10,40 @@ import { TodosServiceService } from '../todos-service.service';
   styleUrls: ['./app-done.component.css']
 })
 export class AppDoneComponent implements OnInit {
-  @Input() todo:Todo = {
-    id:Guid.create() ,
-    isComplete:false , 
-    isFavorite:false , 
-    isDeleted:false,
-    userId:Guid.create(),
-    title:"" 
+  @Input() todo: Todo = {
+    id: Guid.create(),
+    isComplete: false,
+    isFavorite: false,
+    isDeleted: false,
+    userId: Guid.create(),
+    title: ""
   };
-  constructor(private _todos:TodosServiceService){
+  displayStyle: string = "none";
+  constructor(private _todos: TodosServiceService) {
   }
-  addTodo(form:NgForm){
-   this._todos.onSubmit(form.value);
+  addTodo(form: NgForm) {
+    this._todos.onSubmit(form.value);
   }
 
-  completeTodo(){
+  completeTodo() {
     this._todos.onComplete(this.todo.id)
   }
 
-  deleteTodo(){
+  deleteTodo() {
     this._todos.onDelete(this.todo.id);
   }
-  favoriteTodo(){
+  favoriteTodo() {
     this._todos.onFavorite(this.todo.id);
   }
- 
- 
- ngOnInit(): void {
- }
+
+
+  openPopUp() {
+    this.displayStyle = "block";
+  }
+  closePopUp() {
+    this.displayStyle = "none";
+  }
+
+  ngOnInit(): void {
+  }
 }
