@@ -15,6 +15,7 @@ export class AppDeletedComponent implements OnInit {
     isComplete:false , 
     isFavorite:false , 
     isDeleted:false,
+    userId:Guid.create(),
     title:"" 
   };
   constructor(private _todos:TodosServiceService){

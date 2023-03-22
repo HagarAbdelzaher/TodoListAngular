@@ -1,4 +1,4 @@
-<!-- <div *ngIf="currentUrl === 'home'"> -->
+<div *ngIf="currentUrl === 'todo'">
 <div class="container">
    
         <h1 id="what"> So what we gonna do?</h1>
@@ -18,11 +18,11 @@
     <div *ngIf="!todos?.length" class="msg">
         Your Todo List is Empty!
     </div>
-    <!-- </div> -->
+    </div>
 
 </div>
 <!-- Done tasks -->
-<!-- <div *ngIf="currentUrl === 'done'"> -->
+<div *ngIf="currentUrl === 'done'">
 <div class="container">
     <hr>
     <h3 id="completed-tasks">Completed Tasks </h3>
@@ -38,10 +38,10 @@
     </div>
 
 </div>
-<!-- </div> -->
+</div>
 
 <!-- Favorite tasks -->
-<!-- <div *ngIf="currentUrl === 'favorite'"> -->
+<div *ngIf="currentUrl === 'favorites'">
     <div class="container">
         <hr>
         <h3 id="completed-tasks">Favorite Tasks </h3>
@@ -57,10 +57,10 @@
         </div>
     
     </div>
-    <!-- </div> -->
+    </div>
 
     <!-- Deleted tasks -->
-<!-- <div *ngIf="currentUrl === 'deleted'"> -->
+<div *ngIf="currentUrl === 'deleted'">
     <div class="container">
         <hr>
         <h3 id="completed-tasks">Deleted Tasks </h3>
@@ -76,4 +76,4 @@
         </div>
     
     </div>
-    <!-- </div> -->
+    </div>

@@ -15,7 +15,8 @@ export class AppTodoComponent implements OnInit {
     isComplete:false , 
     isFavorite:false , 
     isDeleted:false,
-    title:"" 
+    title:"",
+    userId:Guid.create() 
   };
   constructor(private _todos:TodosServiceService){
   }

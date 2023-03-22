@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Guid } from 'guid-typescript';
 import { Todo } from 'src/models/todo.model';
+import { User } from 'src/models/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,12 @@ deleted:Todo[]=[];
 favorite:Todo[]=[];
   constructor() { }
   onSubmit(_todo:Todo){
-    let todo = new Todo(Guid.create() , _todo.title , _todo.isComplete , _todo.isFavorite , _todo.isDeleted);
+    let currentUser:any={};
+    let current:any =localStorage.getItem("currentuser");
+    if(current ){
+      currentUser = JSON.parse(current);
+    }
+    let todo = new Todo(Guid.create() , _todo.title , _todo.isComplete , _todo.isFavorite , _todo.isDeleted , currentUser.userId );
     this.todos.push(todo);
   }
 
@@ -31,6 +37,24 @@ favorite:Todo[]=[];
     todo.isFavorite=true;
     this.favorite.push(todo);
 
+  }
+  getTodoCount(): number{
+    return this.todos.filter((obj : Todo) => !obj.isComplete && !obj.isDeleted).length;
+  }
+
+  getDoneCount(): number{
+    return this.todos.filter((obj : Todo) => obj.isComplete && !obj.isDeleted).length;
+  }
+
+  getFavCount(): number{
+    return this.todos.filter((obj : Todo) => obj.isFavorite && !obj.isDeleted).length;
+  }
+
+  getDelCount(): number{
+    return this.todos.filter((obj : Todo) => obj.isDeleted).length;
+  }
+  getTotalCount() : number {
+    return  this.todos.filter((obj : Todo) => !obj.isDeleted).length;
   }
 
 }

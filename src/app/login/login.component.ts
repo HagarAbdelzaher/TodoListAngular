@@ -27,13 +27,12 @@ export class LoginComponent {
     submitMyForm(form:NgForm) {
     
       this.user = form.value;
-    
-    let data:any=localStorage.getItem(this.user.email.toString());
-    
-let object:any=JSON.parse(data)
+      let data:any=localStorage.getItem(this.user.email.toString());
+      let object:any=JSON.parse(data)
 
 
 if(object!=null &&this.user.email===object.email && this.user.password===object.password){
+  localStorage.setItem("currentuser",JSON.stringify(this.user));
   console.log('logged in')
 }
 else{

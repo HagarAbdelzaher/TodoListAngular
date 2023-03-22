@@ -8,7 +8,8 @@ export class Todo{
         public title: string,
         public isComplete:boolean,
         public isFavorite:boolean,
-        public isDeleted:boolean
+        public isDeleted:boolean,
+        public userId:Guid
     ){}
 }
 
