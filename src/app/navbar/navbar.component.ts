@@ -8,7 +8,12 @@ import { TodosServiceService } from '../todos-service.service';
 })
 export class NavbarComponent {
 
-  constructor(private _todos: TodosServiceService) { }
+  username:string;
+  constructor(private _todos: TodosServiceService) {
+    let user :any = localStorage.getItem("currentuser");
+    let object:any=JSON.parse(user)
+    this.username = object.username;
+   }
 
   getTodosCount() {
     return this._todos.getTodoCount();
