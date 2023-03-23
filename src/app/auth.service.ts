@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-loggedIn=new BehaviorSubject(true);
+loggedIn=new BehaviorSubject(false);
 loggedIn$=this.loggedIn.asObservable()
   constructor(private http:HttpClient) {  }
 

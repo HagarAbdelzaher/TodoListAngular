@@ -21,13 +21,7 @@ export class LoginComponent {
   })
 }
     
-  
-    //submit() {
-   //   this.user = this.signUpForm.value;
-    //  this.user.id=Guid.create();
-   //   localStorage.setItem(this.user.email.toString(),JSON.stringify(this.user));
-    //  this.signUpForm.reset();
-  //  }
+
     submitMyForm(form:NgForm) {
     
       this.user = form.value;
@@ -36,7 +30,7 @@ export class LoginComponent {
 
 
 if(object!=null &&this.user.email===object.email && this.user.password===object.password){
-  localStorage.setItem("currentuser",JSON.stringify(this.user));
+  localStorage.setItem("currentuser",JSON.stringify(object));
   console.log('logged in')
   this._auth.change();
   this.router.navigate(['/todo']);
