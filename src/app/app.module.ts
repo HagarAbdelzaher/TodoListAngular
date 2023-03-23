@@ -14,7 +14,8 @@ import { AppFavoriteComponent } from './app-favorite/app-favorite.component';
 import { AppDeletedComponent } from './app-deleted/app-deleted.component';
 import { SignUpComponent } from './sign-up/sign-up.component'
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { MyInterceptorInterceptor } from './my-interceptor.interceptor';
 
 
 
@@ -41,7 +42,9 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule
     
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS , useClass: MyInterceptorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
