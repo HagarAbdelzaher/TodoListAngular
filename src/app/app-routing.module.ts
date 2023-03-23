@@ -4,6 +4,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { TodoComponentComponent } from './todo-component/todo-component.component';
 import { LoginComponent } from './login/login.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'deleted', component: TodoComponentComponent},
   {path: 'signup', component: SignUpComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'aboutus', component: AboutUsComponent},
   {path: '**',  component:  NotFoundComponent},
  
 ];

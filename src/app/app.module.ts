@@ -16,6 +16,7 @@ import { SignUpComponent } from './sign-up/sign-up.component'
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { MyInterceptorInterceptor } from './my-interceptor.interceptor';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -31,7 +32,8 @@ import { MyInterceptorInterceptor } from './my-interceptor.interceptor';
     AppFavoriteComponent,
     AppDeletedComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    AboutUsComponent
 
   ],
   imports: [
