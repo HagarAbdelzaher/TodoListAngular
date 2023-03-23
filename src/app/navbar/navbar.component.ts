@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { TodosServiceService } from '../todos-service.service';
 
 @Component({
@@ -7,8 +8,12 @@ import { TodosServiceService } from '../todos-service.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
-  constructor(private _todos: TodosServiceService) { }
+isLogged=false;
+  constructor(private _todos: TodosServiceService , private _auth:AuthService) {
+    this._auth.loggedIn$.subscribe((res)=>{
+      this.isLogged=res
+    })
+   }
 
   getTodosCount() {
     return this._todos.getTodoCount();
@@ -22,4 +27,8 @@ export class NavbarComponent {
   getDoneCount() {
     return this._todos.getDoneCount();
   }
+  logout(){
+    this._auth.change();
+  }
+  
 }

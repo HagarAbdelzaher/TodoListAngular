@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Guid } from 'guid-typescript';
 import { User } from 'src/models/user.model';
 import { NgForm, NgModelGroup } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -10,12 +11,14 @@ import { NgForm, NgModelGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
+  isLogged=false;
   user:User|any;
-  constructor(){
+  constructor( private _auth:AuthService){
   
-    
-  }
+    this._auth.loggedIn$.subscribe((res)=>{
+      this.isLogged=res
+  })
+}
     
   
     //submit() {
@@ -34,6 +37,7 @@ export class LoginComponent {
 if(object!=null &&this.user.email===object.email && this.user.password===object.password){
   localStorage.setItem("currentuser",JSON.stringify(this.user));
   console.log('logged in')
+  this._auth.change();
 }
 else{
 console.log('Wrong credntials')
