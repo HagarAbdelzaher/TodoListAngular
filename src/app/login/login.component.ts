@@ -37,7 +37,7 @@ if(object!=null &&this.user.email===object.email && this.user.password===object.
  
 }
 else{
-console.log('Wrong credntials')
+alert("user not found!")
 }
       form.reset()
 
