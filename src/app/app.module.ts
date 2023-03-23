@@ -31,7 +31,7 @@ import { MyInterceptorInterceptor } from './my-interceptor.interceptor';
     AppFavoriteComponent,
     AppDeletedComponent,
     SignUpComponent,
-    LoginComponent,
+    LoginComponent
 
   ],
   imports: [

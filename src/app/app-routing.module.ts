@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: TodoComponentComponent},
+  {path:'' , component:LoginComponent},
   {path: 'todo', component: TodoComponentComponent},
   {path: 'done', component: TodoComponentComponent},
   {path: 'favorites', component: TodoComponentComponent},

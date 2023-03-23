@@ -13,6 +13,6 @@
         <input formControlName="quote" name="quote" type="text" id="quote"placeholder="quote">
         <input type="submit" [disabled]="!signUpForm.valid">
     </form>
-    <p class="message">Already registered? <a href="#">Login instead</a></p>
+    <p class="message">Already registered? <a (click)="navigate()">Login instead</a></p>
 </div>
 
