@@ -14,9 +14,7 @@ import { AppFavoriteComponent } from './app-favorite/app-favorite.component';
 import { AppDeletedComponent } from './app-deleted/app-deleted.component';
 import { SignUpComponent } from './sign-up/sign-up.component'
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
-
-
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -40,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
     
   ],
   providers: [],

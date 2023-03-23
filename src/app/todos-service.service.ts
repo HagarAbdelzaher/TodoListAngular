@@ -43,7 +43,11 @@ favorite:Todo[]=[];
   }
 
   getDoneCount(): number{
-    return this.todos.filter((obj : Todo) => obj.isComplete && !obj.isDeleted).length;
+    let percentage: number =  parseInt(((this.todos.filter((obj : Todo) => obj.isComplete && !obj.isDeleted).length / this.todos.filter((obj : Todo) => !obj.isDeleted).length) * 100).toFixed(0));
+    if(isNaN(percentage)){
+      return 0;
+    }
+    return percentage;
   }
 
   getFavCount(): number{
@@ -52,9 +56,6 @@ favorite:Todo[]=[];
 
   getDelCount(): number{
     return this.todos.filter((obj : Todo) => obj.isDeleted).length;
-  }
-  getTotalCount() : number {
-    return  this.todos.filter((obj : Todo) => !obj.isDeleted).length;
   }
 
 }
