@@ -14,8 +14,9 @@
       
 
         <input type="submit" [disabled]="!form.valid">
+    
     </form>
-    <p class="message">Don't have an account? <a href="#">Create an account</a></p>
+    <p class="message">Don't have an account? <a (click)="navigate()">Create an account</a></p>
 </div>
 
   

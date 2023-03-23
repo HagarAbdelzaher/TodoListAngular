@@ -30,7 +30,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppFavoriteComponent,
     AppDeletedComponent,
     SignUpComponent,
-    LoginComponent,
+    LoginComponent
 
   ],
   imports: [

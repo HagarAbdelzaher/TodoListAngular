@@ -8,10 +8,11 @@ import { TodosServiceService } from '../todos-service.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-isLogged=false;
+isLogged=true;
   constructor(private _todos: TodosServiceService , private _auth:AuthService) {
     this._auth.loggedIn$.subscribe((res)=>{
       this.isLogged=res
+
     })
    }
 
@@ -29,6 +30,7 @@ isLogged=false;
   }
   logout(){
     this._auth.change();
+    localStorage.removeItem("currentuser");
   }
   
 }

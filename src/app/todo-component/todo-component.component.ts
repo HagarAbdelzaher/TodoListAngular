@@ -16,6 +16,8 @@ export class TodoComponentComponent {
   favorite:Todo[];
   deleted:Todo[];
   currentUrl:string;
+  username:string;
+  quote:string;
 
   constructor(private _todos:TodosServiceService , private _activatedRoute:ActivatedRoute){
     this.todos = _todos.todos;
@@ -23,6 +25,12 @@ export class TodoComponentComponent {
     this.favorite = _todos.favorite;
     this.deleted = _todos.deleted;
     this.currentUrl=this._activatedRoute.snapshot.url.toString();
+    let user :any = localStorage.getItem("currentuser");
+    let object:any=JSON.parse(user)
+    this.username = object.username;
+    let email = object.email;
+    
+    this.quote = object.quote;
     console.log(this.currentUrl);
   }
    onSubmit(form:NgForm){
