@@ -14,6 +14,8 @@ import { AppFavoriteComponent } from './app-favorite/app-favorite.component';
 import { AppDeletedComponent } from './app-deleted/app-deleted.component';
 import { SignUpComponent } from './sign-up/sign-up.component'
 import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -30,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     AppFavoriteComponent,
     AppDeletedComponent,
     SignUpComponent,
-    LoginComponent,
+    LoginComponent
 
   ],
   imports: [
@@ -38,6 +40,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     
   ],
   providers: [],

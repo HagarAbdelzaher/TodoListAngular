@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Guid } from 'guid-typescript';
 import { User } from 'src/models/user.model';
 import { NgForm, NgModelGroup } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -12,9 +13,8 @@ import { NgForm, NgModelGroup } from '@angular/forms';
 export class LoginComponent {
   
   user:User|any;
-  constructor(){
+  constructor(private _auth:AuthService){
   
-    
   }
     
   
@@ -32,7 +32,7 @@ export class LoginComponent {
 
 
 if(object!=null &&this.user.email===object.email && this.user.password===object.password){
-  localStorage.setItem("currentuser",JSON.stringify(this.user));
+  localStorage.setItem("currentuser",JSON.stringify(object));
   console.log('logged in')
 }
 else{

@@ -10,10 +10,7 @@
       <p *ngIf="email.touched && email.errors?.['email']" class="text-danger text-uppercase">Please enter a valid email</p>
       <input class="form-control" name="password" ngModel type="password" id="password" required placeholder="password">
  
-
-      
-        <input class="form-control" name="quote" ngModel type="text" id="quote"placeholder="quote">
-        <input type="submit" [disabled]="!form.valid">
+      <input type="submit" [disabled]="!form.valid">
     </form>
     <p class="message">Don't have an account? <a href="#">Create an account</a></p>
 </div>

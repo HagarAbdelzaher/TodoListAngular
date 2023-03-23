@@ -29,5 +29,6 @@ constructor(){
     this.user.id=Guid.create();
     localStorage.setItem(this.user.email.toString(),JSON.stringify(this.user));
     this.signUpForm.reset();
+    
   }
 }
