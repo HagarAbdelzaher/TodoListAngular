@@ -79,27 +79,32 @@ import { SignUpComponent } from &#x27;./sign-up/sign-up.component&#x27;;
 import { TodoComponentComponent } from &#x27;./todo-component/todo-component.component&#x27;;
 import { LoginComponent } from &#x27;./login/login.component&#x27;;
 import { AboutUsComponent } from &#x27;./about-us/about-us.component&#x27;;
+import { AuthGuard } from &#x27;./auth/auth.guard&#x27;;
 
 
 
 const routes: Routes &#x3D; [
-  {path:&#x27;&#x27; , component:LoginComponent},
-  {path: &#x27;todo&#x27;, component: TodoComponentComponent},
-  {path: &#x27;done&#x27;, component: TodoComponentComponent},
-  {path: &#x27;favorites&#x27;, component: TodoComponentComponent},
-  {path: &#x27;deleted&#x27;, component: TodoComponentComponent},
-  {path: &#x27;signup&#x27;, component: SignUpComponent},
-  {path: &#x27;login&#x27;, component: LoginComponent},
-  {path: &#x27;aboutus&#x27;, component: AboutUsComponent},
-  {path: &#x27;**&#x27;,  component:  NotFoundComponent},
- 
+  {
+    path: &#x27;&#x27;, canActivate: [AuthGuard], children: [
+      { path: &#x27;todo&#x27;, component: TodoComponentComponent },
+      { path: &#x27;done&#x27;, component: TodoComponentComponent },
+      { path: &#x27;favorites&#x27;, component: TodoComponentComponent },
+      { path: &#x27;deleted&#x27;, component: TodoComponentComponent },
+      { path: &#x27;aboutus&#x27;, component: AboutUsComponent },
+    ]
+  },
+  { path: &#x27;signup&#x27;, component: SignUpComponent },
+  { path: &#x27;login&#x27;, component: LoginComponent },
+  { path: &#x27;**&#x27;, component: NotFoundComponent },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }</code></pre>
+export class AppRoutingModule { }
+</code></pre>
     </div>
 </div>
 
